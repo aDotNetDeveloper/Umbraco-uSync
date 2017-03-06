@@ -1,0 +1,22 @@
+﻿@using Umbraco.Core.Models
+@using Umbraco.Web;
+@inherits UmbracoTemplatePage<IPublishedContent>
+@{
+    var repository = new uSync.Site.Models.BannerRepository(Model.Content);
+    var subHeading = Model.Content.GetPropertyValue<string>("pageSubtitle");
+    var summary = Model.Content.GetPropertyValue<string>("pageSummary");
+}
+    <header class="PageHeader container-fluid">
+        <div class="row">
+            @Html.Partial("Partials/_Banner", repository)
+        </div>
+        <div class="PageHeader-title col-xs-12">
+            <h1>@Model.Content.Name.ToUpper()</h1>
+        </div>
+        <div class="col-xs-12">
+            @if (!string.IsNullOrWhiteSpace(subHeading))
+            {   <p class="PageHeader-marketing headingSansSerif">@subHeading</p> }
+            @if (!string.IsNullOrWhiteSpace(summary))
+            {   <p class="PageHeader-sell">@summary</p> }
+        </div>
+    </header>

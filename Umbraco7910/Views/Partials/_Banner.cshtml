@@ -1,0 +1,11 @@
+﻿@inherits UmbracoViewPage<uSync.Site.Models.BannerRepository>
+<div class="PageHeader-banner col-xs-12">
+    @if (Model.BannerImageExists)
+    {
+    <figure>
+        <picture>
+            <img src="@Model.Url" alt="@Model.AltText" title="@Model.AltText" />
+        </picture>
+    </figure>
+    }
+</div>

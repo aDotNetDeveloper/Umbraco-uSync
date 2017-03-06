@@ -1,0 +1,14 @@
+﻿@using Our.Umbraco.Vorto.Extensions
+@using Umbraco.Web
+@using Umbraco.Core.Models
+@inherits UmbracoTemplatePage<IPublishedContent>
+@{ 
+    var dataItem = Model.Content.GetVortoValue<IPublishedContent>("contentData");
+    var content = dataItem.GetPropertyValue<IHtmlString>("pageContent");
+}
+@Html.Partial("Partials/_PageHeader", Model)
+<div class="TextBlock container">
+    <div class="TextBlock-content">
+       @Html.Raw(content)
+    </div>
+</div>
