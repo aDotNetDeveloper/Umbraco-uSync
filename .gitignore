@@ -1,0 +1,46 @@
+packages/*
+**/obj
+**/bin
+*.suo
+*.user
+
+# WinMerge backup files
+*.orig
+
+# Exclude specific App_Data folders to allow Models/*.cs to be included, while ignoring *.flag
+**/App_Data/cache
+**/App_Data/Logs
+**/App_Data/NuGetBackup
+**/App_Data/preview
+**/App_Data/packages
+**/App_Data/RavenDatabases
+**/App_Data/TEMP
+**/App_Data/umbraco.config
+**/App_Data/Umbraco.sdf
+*.flag
+*.stop
+*.once
+**/App_Data/nlog
+
+**/App_Browsers/*
+**/App_Plugins/**
+
+**/Umbraco
+**/Umbraco_Client
+
+# Automatically created. During Umbraco package install I think
+web.config.*.backup
+
+.DS_Store
+*.swp
+*.lock
+*sublime*
+
+.vs
+
+Mocha.*.xml
+NUnit.*.xml
+screenshots
+local.config
+
+*.lic
